@@ -1,0 +1,650 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Golos+Text:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@800&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: url(/Images/Background.jpg);
+    background-size: 120%;
+    object-fit: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-color: black;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 0 23px;
+
+    top: 0;
+}
+
+nav {
+    max-width: 100%;
+    height: 15vh;
+}
+
+.mid-nav {
+    display: flex;
+    align-items: center;
+}
+
+.partition {
+    background-color: white;
+    height: 11vh;
+    width: 1px;
+    margin: 0 20px;
+}
+
+.nav-title {
+    color: #f6f6f6;
+    font-family: 'Golos Text', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 22px;
+    font-style: normal;
+}
+
+.tickets {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    border: 1px solid #D7DF17;
+    margin-top: 10px;
+    margin-left: 33px;
+    font-family: 'Anton', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 24px;
+    overflow: hidden;
+    left: 40%;
+    top: 40%;
+    width: fit-content;
+    perspective: 400px;
+    background-color: #D7DF17;
+
+    -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(rgba(255, 255, 255, 0.3)));
+
+}
+
+.tickets span {
+    display: block;
+    position: relative;
+    transition: 0.3s ease-in-out all;
+    transform-origin: 50% 0;
+    transform-style: preserve-3d;
+    background-color: #D7DF17;
+    color: black;
+    width: fit-content;
+
+}
+
+.tickets span:after {
+    display: block;
+    content: attr(data-title);
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: 0.3s ease-in-out all;
+    transform-origin: 50% 0;
+    transform: translate3d(0px, 105%, 0px) rotateX(-90deg);
+    background-color: #D7DF17;
+    color: black;
+    width: 100%;
+}
+
+.tickets:hover span {
+    transform: translate3d(0px, 0px, -30px) rotateX(90deg);
+}
+
+.main {
+    height: 100vh;
+    width: fit-content;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    position: absolute;
+    left: -500px;
+    pointer-events: none;
+    position: fixed;
+    z-index: 10;
+    border: 15px solid transparent;
+    border-image: url(/Images/2.brder.png) 11 round;
+    transition: 0.3s;
+}
+
+.active.main {
+    left: 0px;
+    pointer-events: fill;
+    opacity: 1;
+    position: absolute;
+    position: fixed;
+    z-index: 0;
+}
+
+.menu-button {
+    padding-top: 35px;
+    z-index: 20;
+    position: absolute;
+}
+
+.main li {
+    margin: 15px 1px;
+}
+
+.main a {
+    font-family: 'Anton', sans-serif;
+    font-weight: 400;
+    color: #f6f6f6;
+    font-size: 28px;
+    list-style: 28px;
+    font-style: normal;
+    text-decoration: none;
+    margin: 25px;
+    position: relative;
+
+}
+
+.main a::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    transition: all .5s;
+
+}
+
+.main a:hover::before {
+    width: 100%;
+
+}
+
+
+
+.partition-h {
+    background-color: white;
+    height: 2px;
+    width: 18vw;
+    margin: 0 20px;
+}
+
+.home {
+    position: relative;
+    top: 15vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.home h1 {
+    font-family: 'Anton', sans-serif;
+    font-size: 80px;
+    line-height: 88px;
+    color: #f6f6f6;
+    font-style: normal;
+    font-weight: 400;
+    margin: 22px;
+}
+
+
+
+.home img {
+    width: 55%;
+    margin-bottom: 20px;
+}
+
+.hero {
+    max-width: 90vw;
+    margin: 150px 70px 30px;
+}
+
+.hero1 {
+    display: flex;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.hero1 img {
+    width: 35vw;
+}
+
+.hero1 div {
+    width: 45vw;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.hero1 div h1 {
+    font-family: 'Anton', sans-serif;
+    color: #dbafe0;
+    font-size: 35px;
+    line-height: 42px;
+    font-weight: 400;
+    font-style: normal;
+
+
+}
+
+.hero1 div p {
+    font-family: 'Golos Text', sans-serif;
+    color: #f6f6f6;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400;
+    font-style: normal;
+    margin: 29px 0;
+
+}
+
+.hero1 div h2 {
+    font-family: 'Anton', sans-serif;
+    color: #f6f6f6;
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+.hero2 {
+    display: flex;
+    height: 100vh;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+}
+
+.hero2 img {
+    width: 35vw;
+}
+
+.hero2 div {
+    width: 45vw;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.hero2 div h1 {
+    font-family: 'Anton', sans-serif;
+    color: #32c3e2;
+    font-size: 35px;
+    line-height: 42px;
+    font-weight: 400;
+    font-style: normal;
+
+
+}
+
+.hero2 div p {
+    font-family: 'Golos Text', sans-serif;
+    color: #f6f6f6;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400;
+    font-style: normal;
+    margin: 29px 0;
+
+}
+
+.hero3 {
+    display: flex;
+    height: 100vh;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+}
+
+.hero3 img {
+    width: 35vw;
+    margin-right: 20px;
+}
+
+.hero3 div {
+    width: 45vw;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.hero3 div h1 {
+    font-family: 'Anton', sans-serif;
+    color: #d7df17;
+    font-size: 35px;
+    line-height: 42px;
+    font-weight: 400;
+    font-style: normal;
+
+
+}
+
+.hero3 div p {
+    font-family: 'Golos Text', sans-serif;
+    color: #f6f6f6;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400;
+    font-style: normal;
+    margin: 29px 0;
+
+}
+
+.hero4 {
+    display: flex;
+    height: 100vh;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+}
+
+.hero4 img {
+    width: 35vw;
+    margin-right: 20px;
+}
+
+.hero4 div {
+    width: 45vw;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.hero4 div h1 {
+    font-family: 'Anton', sans-serif;
+    color: #d7df17;
+    font-size: 35px;
+    line-height: 42px;
+    font-weight: 400;
+    font-style: normal;
+
+
+}
+
+.hero4 div p {
+    font-family: 'Golos Text', sans-serif;
+    color: #f6f6f6;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400;
+    font-style: normal;
+    margin: 29px 0;
+
+}
+
+.extra {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    margin-bottom: 20px;
+}
+
+.extra h1 {
+    color: #f6f6f6;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 32px;
+}
+
+.extra button {
+    color: #f6f6f6;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    background-color: #9264cc;
+    border-radius: 9px;
+    padding: 9px 15px;
+    border: none;
+
+}
+
+.partner {
+    color: #f6f6f6;
+    font-family: 'Anton', sans-serif;
+    font-size: 40px;
+    line-height: 48px;
+    font-weight: 400;
+    margin: 80px 0 50px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 130px 130px 130px 130px 130px 130px 130px;
+    grid-template-rows: 112px 112px 112px 112px 112px;
+    grid-gap: 1.5rem 1.5rem;
+    justify-content: center;
+    align-items: stretch;
+
+}
+
+.container img {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    filter: grayscale(100%);
+}
+
+footer {
+
+    margin: 50px;
+}
+
+footer div {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer ul h1,
+footer div h1 {
+    color: #f6f6f6;
+    font-family: 'Golos Text', sans-serif;
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 600;
+    font-style: normal;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+
+}
+
+footer ul li {
+    list-style: none;
+    width: fit-content;
+    color: #f6f6f6;
+    font-family: 'Golos Text', sans-serif;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 700;
+    font-style: normal;
+    text-transform: capitalize;
+    margin: 15px 0;
+    display: flex;
+    position: relative;
+
+
+}
+
+footer ul li::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    transition: all .5s;
+}
+
+footer ul li:hover::before {
+    width: 100%;
+
+}
+
+
+.signup {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.signup input {
+    color: #333333;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 400;
+    font-style: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: 20px 0;
+}
+
+.signup button {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    border: 1px solid #D7DF17;
+    margin-top: 10px;
+
+    font-family: 'Anton', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 24px;
+    overflow: hidden;
+    left: 40%;
+    top: 40%;
+    width: fit-content;
+    perspective: 400px;
+    background-color: #D7DF17;
+
+    -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(rgba(255, 255, 255, 0.3)));
+
+}
+
+.signup button span {
+    display: block;
+    position: relative;
+    transition: 0.3s ease-in-out all;
+    transform-origin: 50% 0;
+    transform-style: preserve-3d;
+    background-color: #D7DF17;
+    color: black;
+    width: fit-content;
+
+}
+
+.signup button span:after {
+    display: block;
+    content: attr(data-title);
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: 0.3s ease-in-out all;
+    transform-origin: 50% 0;
+    transform: translate3d(0px, 105%, 0px) rotateX(-90deg);
+    background-color: #D7DF17;
+    color: black;
+    width: 100%;
+}
+
+.signup button:hover span {
+    transform: translate3d(0px, 0px, -30px) rotateX(90deg);
+}
+
+
+.partition-f {
+    width: 90vw;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.706);
+    margin: 50px auto;
+}
+
+.copyrights h1 {
+    color: #f6f6f6;
+    font-family: 'Golos Text', sans-serif;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 700;
+    font-style: normal;
+    position: relative;
+}
+
+.copyrights h1::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    transition: all .5s;
+}
+
+.copyrights h1:hover::before {
+    width: 100%;
+
+}
+
+/**
+ * ----------------------------------------
+ * animation fade-in
+ * ----------------------------------------
+ */
+
+
+
+
+@media only screen and (max-width: 767px) {
+
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    body {
+        position: relative;
+        background-repeat: no-repeat;
+
+    }
+
+    .main {
+        height: 100%;
+        width: 100vw;
+    }
+
+
+}
